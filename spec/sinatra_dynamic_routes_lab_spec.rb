@@ -1,3 +1,5 @@
+require 'pry'
+
 describe App do
   describe 'GET /reversename/:name' do
     it 'sends a 200 status code' do
@@ -86,6 +88,7 @@ describe App do
   describe 'GET /:operation/:number1/:number2' do
     it 'adds two numbers together' do
       get '/add/215/93'
+      #binding.pry
 
       expect(last_response.status).to eq(200)
       expect(last_response.body).to include('308')
